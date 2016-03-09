@@ -1,3 +1,5 @@
+var autoprefixer = require('autoprefixer');
+
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
@@ -6,9 +8,7 @@ var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var ExtractTextPluginConfig = new ExtractTextPlugin('style.css', {
-  allChunks: true
-})
+var ExtractTextPluginConfig = new ExtractTextPlugin('style.css');
 
 module.exports = {
   entry: [
@@ -24,9 +24,12 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loader: ExtractTextPlugin.extract('css!sass')
+        loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'postcss-loader', 'sass-loader'])
       }
     ]
+  },
+  postcss: function() {
+    return [autoprefixer];
   },
   plugins: [
     HtmlWebpackPluginConfig,

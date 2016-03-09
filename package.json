@@ -1,8 +1,8 @@
 {
-  "name": "react-webpack-starter",
+  "name": "easily-breezily-react-webpack",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A quick starter for react project using webpack",
+  "main": "",
   "scripts": {
     "production": "webpack -p",
     "start": "webpack-dev-server"

@@ -1,17 +1,15 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
 
-require('./sass/style.scss');
 
-var HelloWorld = React.createClass({
-  render: function() {
-    return (
-      <div>Hello World!</div>
-    )
+import React from 'react';
+import {render} from 'react-dom'
+
+class HelloWorld extends React.Component {
+  render() {
+    return <div>Hello World!</div>
   }
-});
+}
 
-ReactDOM.render(
+render(
   <HelloWorld />,
   document.getElementById('app')
-);
+)

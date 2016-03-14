@@ -25,6 +25,10 @@ module.exports = {
         test: /\.scss$/,
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract('style-loader', ['css-loader', 'postcss-loader', 'sass-loader'])
+      },
+      {
+        test: /.(png|jpg)$/,
+        loader: 'url?limit=8192'
       }
     ]
   },

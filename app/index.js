@@ -1,11 +1,11 @@
-
-
 import React from 'react';
 import {render} from 'react-dom'
 
+require('./sass/style.scss')
+
 class HelloWorld extends React.Component {
   render() {
-    return <div>Hello World!</div>
+    return <h1>Hello World!</h1>
   }
 }
 
